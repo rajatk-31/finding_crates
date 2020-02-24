@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	spacing "sample/spacing"
+)
 
 type dimensions struct {
 	length  int32
@@ -37,4 +40,5 @@ func main() {
 	allProducts := []product{}
 	appendCrated(&allProducts)
 	fmt.Println(allProducts)
+	spacing.EmptySpaces()
 }
