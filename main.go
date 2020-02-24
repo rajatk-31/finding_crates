@@ -28,6 +28,6 @@ func main() {
 	fmt.Println("This is test file.")
 	allProducts := []structs.Product{}
 	appendCrated(&allProducts)
-	fmt.Println(allProducts)
+	// fmt.Println(allProducts)
 	spacing.EmptySpaces(allProducts)
 }
