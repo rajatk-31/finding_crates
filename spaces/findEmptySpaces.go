@@ -1,8 +1,14 @@
 package spacing
 
-import "fmt"
+import (
+	"fmt"
+	structs "sample/structs"
+)
 
 //EmptySpaces Exported function
-func EmptySpaces() {
+func EmptySpaces(p []structs.Product) {
+	for _, prod := range p {
+		fmt.Println(prod)
+	}
 	fmt.Println("Hi")
 }

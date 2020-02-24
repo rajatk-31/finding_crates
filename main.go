@@ -3,33 +3,22 @@ package main
 import (
 	"fmt"
 	spacing "sample/spacing"
+	structs "sample/structs"
 )
 
-type dimensions struct {
-	length  int32
-	breadth int32
-	height  int32
-}
-
-type product struct {
-	pName  string
-	status int32
-	dimensions
-}
-
-func appendCrated(c *[]product) {
+func appendCrated(c *[]structs.Product) {
 	// c := *cd
 	// Loops to append crates
 	for i := 0; i < 5; i++ {
-		n := product{pName: "crate", status: 1, dimensions: dimensions{length: 10, breadth: 10, height: 10}}
+		n := structs.Product{PName: "crate", Status: 1, Dimensions: structs.Dimensions{Length: 10, Breadth: 10, Height: 10}}
 		*c = append(*c, n)
 	}
 	for i := 0; i < 5; i++ {
-		n := product{pName: "Big", status: 1, dimensions: dimensions{length: 22, breadth: 22, height: 22}}
+		n := structs.Product{PName: "Big", Status: 1, Dimensions: structs.Dimensions{Length: 22, Breadth: 22, Height: 22}}
 		*c = append(*c, n)
 	}
 	for i := 0; i < 5; i++ {
-		n := product{pName: "Bigger", status: 1, dimensions: dimensions{length: 50, breadth: 50, height: 50}}
+		n := structs.Product{PName: "Bigger", Status: 1, Dimensions: structs.Dimensions{Length: 50, Breadth: 50, Height: 50}}
 		*c = append(*c, n)
 	}
 	// return c
@@ -37,8 +26,8 @@ func appendCrated(c *[]product) {
 
 func main() {
 	fmt.Println("This is test file.")
-	allProducts := []product{}
+	allProducts := []structs.Product{}
 	appendCrated(&allProducts)
 	fmt.Println(allProducts)
-	spacing.EmptySpaces()
+	spacing.EmptySpaces(allProducts)
 }
