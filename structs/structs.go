@@ -13,3 +13,27 @@ type Product struct {
 	Status int32
 	Dimensions
 }
+
+//UniqueSpaces struct to store the unique spaces available.
+type UniqueSpaces struct {
+	CType      string
+	TotalCount int32
+	FreeCount  int32
+	Dimensions Dimensions
+}
+
+//SKU defines the sku details
+type SKU struct {
+	Sku        string
+	Quantity   int64
+	Dimensions Dimensions
+}
+
+//FinalAnswer will tell the final output of the assets assigned for the given inbound order
+type FinalAnswer struct {
+	Sku    string
+	Assets []struct {
+		AssetName     string
+		TotalQuantity int32
+	}
+}

@@ -5,18 +5,10 @@ import (
 	structs "sample/structs"
 )
 
-//UniqueSpaces struct to store the unique spaces available.
-type UniqueSpaces struct {
-	cType      string
-	totalCount int32
-	freeCount  int32
-	dimensions structs.Dimensions
-}
-
 //Unique --> to find unique elements in a slice
-func unique(strSlice []structs.Product) []UniqueSpaces {
+func unique(strSlice []structs.Product) []structs.UniqueSpaces {
 	keys := make(map[string]bool)
-	unique := []UniqueSpaces{}
+	unique := []structs.UniqueSpaces{}
 	list := []string{}
 	for _, entry := range strSlice {
 		// fmt.Println("YHA2", list)
@@ -25,7 +17,7 @@ func unique(strSlice []structs.Product) []UniqueSpaces {
 		if !value {
 			keys[entry.PName] = true
 			list = append(list, entry.PName)
-			x := UniqueSpaces{cType: entry.PName, totalCount: 1, freeCount: 0, dimensions: entry.Dimensions}
+			x := structs.UniqueSpaces{CType: entry.PName, TotalCount: 1, FreeCount: 0, Dimensions: entry.Dimensions}
 			unique = append(unique, x)
 			uniqueLen := len(unique)
 			if entry.Status == 1 {
