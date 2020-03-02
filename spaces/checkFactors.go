@@ -5,7 +5,6 @@ import (
 	structs "sample/structs"
 )
 
-//Unique --> to find unique elements in a slice
 func unique(strSlice []structs.Product) []structs.UniqueSpaces {
 	keys := make(map[string]bool)
 	unique := []structs.UniqueSpaces{}
@@ -21,7 +20,7 @@ func unique(strSlice []structs.Product) []structs.UniqueSpaces {
 			unique = append(unique, x)
 			uniqueLen := len(unique)
 			if entry.Status == 1 {
-				unique[uniqueLen-1].freeCount += 1
+				unique[uniqueLen-1].FreeCount += 1
 			}
 			// fmt.Println("itthe ", unique)
 
@@ -38,9 +37,9 @@ func unique(strSlice []structs.Product) []structs.UniqueSpaces {
 			}
 
 			// fmt.Println("YHA1xx", unique, "-==-=-=-=", indexofele)
-			unique[indexofele].totalCount += 1
+			unique[indexofele].TotalCount += 1
 			if entry.Status == 1 {
-				unique[indexofele].freeCount += 1
+				unique[indexofele].FreeCount += 1
 			}
 		}
 	}
@@ -57,7 +56,9 @@ func EmptySpaces(p []structs.Product) {
 	// 	dimensions structs.Dimensions
 	// }
 	list := unique(p)
+	sku := structs.SKU{Sku: "ABC", Quantity: 8, Dimensions: structs.Dimensions{Length: 11, Breadth: 5, Height: 5}}
 	fmt.Println("Here is the list", list)
+	AllskuObO(list, sku)
 	// for _, prod := range p {
 	// 	fmt.Println(prod)
 	// // }

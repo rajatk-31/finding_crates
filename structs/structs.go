@@ -37,3 +37,13 @@ type FinalAnswer struct {
 		TotalQuantity int32
 	}
 }
+
+//AssignedSpaces gives the final result for the assigned spaces.
+type AssignedSpaces struct {
+	Success           bool
+	SpillPercent      float64
+	Qty               int32
+	ItemInSingleAsset int32
+	FreePerc          float64
+	Vol               int64
+}

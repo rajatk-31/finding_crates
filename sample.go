@@ -1,24 +1,14 @@
-// package processopr
+package main
 
+import (
+	"fmt"
+	"math"
+)
 
-// type processing struct {
-//     sets []model{}
-//     free int32
+func main() {
+	// x := 5
+	// y := 8
 
-// }
-
-// func NewProcessing() *processing {
-//     return &processing{}
-// }
-
-// func(p *processing) push(){
-//     p.reset()
-// }
-
-// func(p *processing) check(){
-
-// }
-
-// func(p *processing) reset(){
-
-// }
+	z := math.Ceil(0.123)
+	fmt.Println(z)
+}
